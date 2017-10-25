@@ -26,9 +26,12 @@
     if (object == nil) {
         return nil;
     }
+    
     NSParameterAssert(target != nil);
     NSParameterAssert([target respondsToSelector:selector]);
+    
     self = [super init];
+    
     if (self) {
         self.target = target;
         self.selector = selector;
@@ -36,15 +39,23 @@
         self.keyPath = keyPath;
         [object addObserver:self forKeyPath:keyPath options:options context:(__bridge void *)(self)];
     }
+    
     return self;
 }
 
-+ (NSObject *)observeObject:(id)object keyPath:(NSString*)keyPath target:(id)target selector:(SEL)selector __attribute__((warn_unused_result));
++ (NSObject *)observeObject:(id)object
+                    keyPath:(NSString*)keyPath
+                     target:(id)target
+                   selector:(SEL)selector __attribute__((warn_unused_result));
 {
     return [self observeObject:object keyPath:keyPath target:target selector:selector options:0];
 }
 
-+ (NSObject *)observeObject:(id)object keyPath:(NSString*)keyPath target:(id)target selector:(SEL)selector options:(NSKeyValueObservingOptions)options __attribute__((warn_unused_result));
++ (NSObject *)observeObject:(id)object
+                    keyPath:(NSString*)keyPath
+                     target:(id)target
+                   selector:(SEL)selector
+                    options:(NSKeyValueObservingOptions)options __attribute__((warn_unused_result));
 {
     return [[self alloc] initWithObject:object keyPath:keyPath target:target selector:selector options:options];
 }

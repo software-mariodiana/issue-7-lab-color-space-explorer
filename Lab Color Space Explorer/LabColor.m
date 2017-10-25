@@ -27,7 +27,8 @@ static double D65TristimulusValues[3] = {95.047, 100.0, 108.883};
 
 - (NSString *)description;
 {
-    return [NSString stringWithFormat:@"<%@: %p> {%g, %g, %g}", [self class], self, self.lComponent, self.aComponent, self.bComponent];
+    return [NSString stringWithFormat:@"<%@: %p> {%g, %g, %g}",
+            [self class], self, self.lComponent, self.aComponent, self.bComponent];
 }
 
 + (NSSet *)keyPathsForValuesAffectingRedComponent
@@ -67,7 +68,10 @@ static double D65TristimulusValues[3] = {95.047, 100.0, 108.883};
 
 - (UIColor *)color
 {
-    return [UIColor colorWithRed:self.redComponent * 0.01 green:self.greenComponent * 0.01 blue:self.blueComponent * 0.01 alpha:1.];
+    return [UIColor colorWithRed:self.redComponent * 0.01
+                           green:self.greenComponent * 0.01
+                            blue:self.blueComponent * 0.01
+                           alpha:1.];
 }
 
 @end

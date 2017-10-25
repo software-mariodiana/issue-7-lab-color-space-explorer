@@ -39,7 +39,12 @@
 - (void)setLabColor:(LabColor *)labColor
 {
     _labColor = labColor;
-    self.colorObserveToken = [KeyValueObserver observeObject:labColor keyPath:@"color" target:self selector:@selector(colorDidChange:) options:NSKeyValueObservingOptionInitial];
+    self.colorObserveToken = [KeyValueObserver observeObject:labColor
+                                                     keyPath:@"color"
+                                                      target:self
+                                                    selector:@selector(colorDidChange:)
+                                                     options:NSKeyValueObservingOptionInitial];
+    
     self.lSlider.value = self.labColor.lComponent;
     self.aSlider.value = self.labColor.aComponent;
     self.bSlider.value = self.labColor.bComponent;
