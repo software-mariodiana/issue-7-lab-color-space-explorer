@@ -60,7 +60,10 @@
     return [[self alloc] initWithObject:object keyPath:keyPath target:target selector:selector options:options];
 }
 
-- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
+- (void)observeValueForKeyPath:(NSString*)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary*)change
+                       context:(void*)context
 {
     if (context == (__bridge void *)(self)) {
         [self didChange:change];
