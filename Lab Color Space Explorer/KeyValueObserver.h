@@ -38,9 +38,16 @@
 ///                                                    target:self
 ///                                                  selector:@selector(nameDidChange:)];
 /// @endcode
-+ (NSObject *)observeObject:(id)object keyPath:(NSString*)keyPath target:(id)target selector:(SEL)selector __attribute__((warn_unused_result));
++ (NSObject *)observeObject:(id)object
+                    keyPath:(NSString*)keyPath
+                     target:(id)target
+                   selector:(SEL)selector __attribute__((warn_unused_result));
 
 /// Create a key-value-observer with the given KVO options
-+ (NSObject *)observeObject:(id)object keyPath:(NSString*)keyPath target:(id)target selector:(SEL)selector options:(NSKeyValueObservingOptions)options __attribute__((warn_unused_result));
++ (NSObject *)observeObject:(id)object
+                    keyPath:(NSString*)keyPath
+                     target:(id)target
+                   selector:(SEL)selector
+                    options:(NSKeyValueObservingOptions)options __attribute__((warn_unused_result));
 
 @end
