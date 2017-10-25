@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 objc.io. All rights reserved.
 //
 
-// https://github.com/objcio/issue-7-lab-color-space-explorer
+// See:
+//     https://github.com/objcio/issue-7-lab-color-space-explorer and
+//     https://www.objc.io/issues/7-foundation/key-value-coding-and-observing/
 
 #import <UIKit/UIKit.h>
 
