@@ -29,7 +29,7 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad;
+- (void)viewDidLoad
 {
     [super viewDidLoad];
 	self.labColor = [[LabColor alloc] init];
@@ -50,22 +50,22 @@
     self.bSlider.value = self.labColor.bComponent;
 }
 
-- (IBAction)updateLComponent:(UISlider *)sender;
+- (IBAction)updateLComponent:(UISlider *)sender
 {
     self.labColor.lComponent = sender.value;
 }
 
-- (IBAction)updateAComponent:(UISlider *)sender;
+- (IBAction)updateAComponent:(UISlider *)sender
 {
     self.labColor.aComponent = sender.value;
 }
 
-- (IBAction)updateBComponent:(UISlider *)sender;
+- (IBAction)updateBComponent:(UISlider *)sender
 {
     self.labColor.bComponent = sender.value;
 }
 
-- (void)colorDidChange:(NSDictionary *)change;
+- (void)colorDidChange:(NSDictionary *)change
 {
     self.colorView.backgroundColor = self.labColor.color;
 }

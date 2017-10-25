@@ -25,7 +25,7 @@ static double D65TristimulusValues[3] = {95.047, 100.0, 108.883};
     return self;
 }
 
-- (NSString *)description;
+- (NSString *)description
 {
     return [NSString stringWithFormat:@"<%@: %p> {%g, %g, %g}",
             [self class], self, self.lComponent, self.aComponent, self.bComponent];
@@ -36,7 +36,7 @@ static double D65TristimulusValues[3] = {95.047, 100.0, 108.883};
     return [NSSet setWithObject:@"lComponent"];
 }
 
-- (double)redComponent;
+- (double)redComponent
 {
     return D65TristimulusValues[0] * inverseF(1./116. * (self.lComponent + 16));
 }

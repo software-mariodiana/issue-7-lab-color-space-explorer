@@ -21,7 +21,11 @@
 
 @implementation KeyValueObserver
 
-- (id)initWithObject:(id)object keyPath:(NSString*)keyPath target:(id)target selector:(SEL)selector options:(NSKeyValueObservingOptions)options;
+- (id)initWithObject:(id)object
+             keyPath:(NSString*)keyPath
+              target:(id)target
+            selector:(SEL)selector
+             options:(NSKeyValueObservingOptions)options
 {
     if (object == nil) {
         return nil;
@@ -46,7 +50,7 @@
 + (NSObject *)observeObject:(id)object
                     keyPath:(NSString*)keyPath
                      target:(id)target
-                   selector:(SEL)selector __attribute__((warn_unused_result));
+                   selector:(SEL)selector __attribute__((warn_unused_result))
 {
     return [self observeObject:object keyPath:keyPath target:target selector:selector options:0];
 }
@@ -55,7 +59,7 @@
                     keyPath:(NSString*)keyPath
                      target:(id)target
                    selector:(SEL)selector
-                    options:(NSKeyValueObservingOptions)options __attribute__((warn_unused_result));
+                    options:(NSKeyValueObservingOptions)options __attribute__((warn_unused_result))
 {
     return [[self alloc] initWithObject:object keyPath:keyPath target:target selector:selector options:options];
 }
@@ -70,7 +74,7 @@
     }
 }
 
-- (void)didChange:(NSDictionary *)change;
+- (void)didChange:(NSDictionary *)change
 {
     id strongTarget = self.target;
     
@@ -80,7 +84,7 @@
     func(strongTarget, selector);
 }
 
-- (void)dealloc;
+- (void)dealloc
 {
     [self.observedObject removeObserver:self forKeyPath:self.keyPath];
 }
