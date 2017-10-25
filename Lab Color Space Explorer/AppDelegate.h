@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 objc.io. All rights reserved.
 //
 
+// https://github.com/objcio/issue-7-lab-color-space-explorer
+
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

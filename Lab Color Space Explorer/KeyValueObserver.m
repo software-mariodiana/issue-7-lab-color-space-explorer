@@ -70,10 +70,11 @@
 - (void)didChange:(NSDictionary *)change;
 {
     id strongTarget = self.target;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    [strongTarget performSelector:self.selector withObject:change];
-#pragma clang diagnostic pop
+    
+    SEL selector = [self selector];
+    IMP imp = [strongTarget methodForSelector:selector];
+    void (*func)(id, SEL) = (void *)imp;
+    func(strongTarget, selector);
 }
 
 - (void)dealloc;
