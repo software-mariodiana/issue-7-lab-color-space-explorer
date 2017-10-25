@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
 	self.labColor = [[LabColor alloc] init];
+    [self resetUI];
 }
 
 - (void)setLabColor:(LabColor *)labColor
@@ -62,6 +63,17 @@
 - (void)colorDidChange:(NSDictionary *)change;
 {
     self.colorView.backgroundColor = self.labColor.color;
+}
+
+- (void)resetUI
+{
+    self.lSlider.value = 75.0;
+    self.aSlider.value = 0.0;
+    self.bSlider.value = 0.0;
+    
+    [self updateLComponent:[self lSlider]];
+    [self updateAComponent:[self aSlider]];
+    [self updateBComponent:[self bSlider]];
 }
 
 @end
